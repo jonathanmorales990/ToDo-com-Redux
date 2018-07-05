@@ -1,0 +1,471 @@
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?zdl250');
+  src:  url('fonts/icomoon.eot?zdl250#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?zdl250') format('woff2'),
+    url('fonts/icomoon.ttf?zdl250') format('truetype'),
+    url('fonts/icomoon.woff?zdl250') format('woff'),
+    url('fonts/icomoon.svg?zdl250#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-drag:before {
+  position:relative;
+  top:5.5px;
+  content: "\e900";
+}
+.icon-Add:before {
+  font-size: 25px;
+  content: "\e901";
+}
+.icon-trash:before {
+  cursor:pointer;
+ 
+  font-size:20px;
+  content: "\e902";
+}
+
+li{list-style-type: none; display:inline-block;}
+
+
+$perfil-card-color:#F5F5FA;
+$color-button:#7540EE;
+$white:#FFFFFF;
+$fonte:'Source Sans Pro', sans-serif;
+
+body{  font-family: $fonte; text-align: left!important; background-color: white!important;}
+
+.perfil-dados-titulo{
+  color: #88889C;
+  font-size: 12px;
+  margin: 0px;
+}
+.container-principal {
+
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.container-perfil{
+ margin-top: 90px;
+
+  display: flex;
+
+}
+
+.container-perfil-left{
+
+  
+  width:75%;
+  display:inline-block;
+
+}
+.container-perfil-right{
+  position:relative;
+ 
+  width:25%;
+  display:inline-block;
+  
+}
+
+.perfil-card-background {
+  float: left;
+  padding: 15px;
+  margin-top: 10px;
+  display: inline-block;   
+  border-radius: 10px;
+  position: relative;
+  width: 180px;
+  height: 230px; 
+  background-color: $perfil-card-color;
+  
+  .perfil-image {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-position: 50%;
+  }
+
+}
+/* 
+.HideOnScale{overflow: hidden; border-radius: 10px; height: 100%;}
+ */
+/* .perfil-card{
+  object-fit: cover;
+  display: inline-block;
+  border-radius: 10px;
+  position:relative;
+  width:100%;
+  height:100%;
+
+} */
+
+.container-perfil-status{
+  margin-left:44px;
+  float:left;
+  display: inline-block;
+  position:relative;
+  width:25px;
+  height:100%;
+
+}
+.circle-status-perfil{
+    margin-top: 72px;
+    height: 23px;
+    width: 23px;
+    border: 3px solid #D4F8E3;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #e8f9d7d9;
+    
+}
+
+.circle-status-perfil::before{
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  
+  background-color: #caeda4;
+  border-radius: 50%;
+  position: relative;
+  margin: auto; 
+  border: 3px solid #2dc76d;
+  top: 49%;
+  -ms-transform:  translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.perfil-dados-status-container > div{
+
+  display: inline-block;
+ }
+
+.perfil-dados-numero{
+
+  display: block;
+  padding: 0px!important;
+  margin-top: 11px;
+  margin-bottom: 0px;
+  margin-right:64px;
+  color: #7540EE;
+  font-size: 20px;
+ }
+
+.perfil-dados-status{
+  display: block;
+  margin-right: 22px;
+  margin-top:0px;
+  font-size: 12px;
+  color: #88889C;
+}
+
+.perfil-dados-status-container{
+  border-top: 2px solid #ECECEE; 
+  margin-top:43px;
+  padding-top: 12px;
+  float:left;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+.container-perfil-dados{
+  margin-top: 70px;
+  margin-left: 23px;
+  float:left;
+  display: inline-block;
+  position:relative;
+  width:257px;
+}
+.perfil-dados{
+  margin-top:5px;
+  float:left;
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+.perfil-dados > .perfil-nome {
+  margin-top: 0px;
+  
+}
+.perfil-nome{
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #656589;
+}
+.perfil-cargo{
+  font-size: 12px;
+  color:#88889C;
+}
+
+.cria-taks-button{
+  cursor:pointer;
+  color:$white;
+  text-align:  center;
+  font-size:16px;
+  border-radius:10px;
+  font-family: $fonte;
+  width: 250px;
+  height: 60px;
+  background-color:$color-button;
+  border:none;
+  outline:0;
+  position: absolute;
+  bottom:0;
+  right:0;
+  box-shadow: 0px 25px 68px #7540ee36;
+  transition-timing-function: ease-out;
+  transition: background-color 1.1s;
+}
+
+.cria-taks-button::before {
+  font-size: 25px;
+  margin-right:15px;
+  font-weight: 0;
+  font-family: 'icomoon';
+  content: "\e901";
+}
+
+.textButton{
+ 
+  position: relative;
+  top: -4px;
+  margin: 0px;
+  font-weight: 600;
+}
+
+.button-icon{
+  
+  font-size:25px!important;
+  
+}
+
+.cria-taks-button:hover{
+ transition-timing-function: ease-int;
+ transition: background-color 1.1s;
+ background-color:#9467fb;
+}
+
+.circle-pendentes{
+  width:14px;
+  height:14px;
+  background-color:#FF7052;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:44px;
+
+}
+.circle-emproducao{
+  width:14px;
+  height:14px;
+  background-color:#FFC800;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:44px;
+ 
+}
+.circle-resolvido{
+  width:14px;
+  height:14px;
+  background-color:#2DC76D;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:44px;
+ 
+}
+.container-todo{
+  width:100%;
+  min-height:25px;
+}
+.titulo-todo{
+  font-size:20px;
+  color:#656589;
+  display:inline-block;
+  margin:0px; 
+  font-weight:600;
+}
+
+.container-todo-principal{
+  margin-top:97px;
+  margin-left:10px;
+}
+.todo-lists-top-titulos{
+  margin:0px;
+  margin-top:50px;
+  padding:0px;
+}
+.todo-lists-top-empty{
+  width:58px;
+  display:inline-block;
+  height:15px;
+
+}
+.todo-lists-top-descricao{
+  margin-left:3px;
+  width:452px;
+  color:#88889C;
+  font-size:12px;
+  display:inline-block;
+  height:15px;
+  
+}
+.todo-lists-top-resposavel{
+  width:258px;
+  color:#88889C;
+  font-size:12px;
+  display:inline-block;
+  height:15px;
+  margin-left:5px;
+  
+}
+.todo-lists-top-status{
+  width:219px;
+  color:#88889C;
+  font-size:12px;
+  display:inline-block;
+  height:15px;
+}
+
+.todo-lists{
+  margin:0px;
+  padding:0px;
+  margin-bottom: 15px;
+}
+
+.todo-lists-icon{
+  height:40px;
+  font-size:28px;
+  margin-right:44px;
+  color:#ECECEE;
+}
+
+.todo-lists-descricao{
+  width:437px;
+  margin-left:3px;
+  color:#656589;
+  font-size:16.5px;
+  border-bottom: 1px solid #ECECEE;
+  padding-bottom:34px; 
+}
+.todo-lists-responsavel{
+  width:240px;
+  margin-left:20px;
+  color:#656589;
+  font-size:16px;
+  border-bottom: 1px solid #ECECEE;
+  padding-bottom:35px; 
+}
+.todo-lists-status{
+  width:162px;
+  margin-left:20px;                                                 
+  color:#656589;
+  font-size:16px;
+  border-bottom: 1px solid #ECECEE;
+  padding-bottom:35px; 
+}
+
+.circle-pendente-mini{
+  width:12px;
+  height:12px;
+  background-color:#FF7052;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:12px;
+ 
+}
+
+.circle-emproducao-mini{
+  width:12px;
+  height:12px;
+  background-color:#FFC800;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:12px;
+ 
+}
+
+.circle-resolvido-mini{
+  width:12px;
+  height:12px;
+  background-color:#2DC76D;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:12px;
+ 
+}
+
+
+.perfil-foto-mini{
+  position:relative;
+  top:12px;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:23px;
+  width:40px;
+  height:40px;
+  background-color:lightgrey;
+}
+.floatdir{
+
+  position:relative;
+  right:-50px;
+  top:2px;
+  float:right;
+
+}
+
+.todo-lists-containers{
+  margin-bottom: calc(90px - 15px);
+  margin-top:15px;
+}
+
+.modal-task{
+    background-color: white!important;
+    width: 100%;
+    height: 50px;
+}
+
+.confirma{
+  background-color: green!important;
+  margin-left: 3px;
+}
+
+.light-modal-content{
+  min-width: 400px;
+}
+.floatdir{
+  color:#7540ee40;
+}
+.icon-trash:hover{color:#7540EE!important;}
+.todo-lists:hover {
+
+  .todo-lists-descricao{color:#7540EE;}
+  .todo-lists-responsavel{color:#7540EE;}
+  .todo-lists-status{color:#7540EE;}
+  .todo-lists-trash{color:#7540EE;}
+  .floatdir{color:#7540EE!important;}
+  .todo-lists-icon{color: #88889C;}
+}
