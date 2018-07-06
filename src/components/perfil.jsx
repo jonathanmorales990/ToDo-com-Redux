@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import perfil from '../img/01.jpg';
+import { connect } from 'react-redux';
 
 class Perfil extends Component {
-
-	constructor(props) {
-
-	super(props);
-
-	}
 
 	render() {
 		return (
@@ -36,17 +31,17 @@ class Perfil extends Component {
 							<p className= "perfil-dados-titulo">Você possui:</p>
 
 							<div>
-								<p className= "perfil-dados-numero">{('0' +this.props.pendentes).slice(-2)}</p>
+								<p className= "perfil-dados-numero">{('0' + ( this.props.todoReducer.todos.filter(todos => todos.status === 'pendentes').length) ).slice(-2)}</p>
 								<p className= "perfil-dados-status">pendentes</p>
 							</div>
 
 							<div>
-								<p className= "perfil-dados-numero">{('0' + this.props.emproducao).slice(-2)}</p>
+								<p className= "perfil-dados-numero">{('0' + ( this.props.todoReducer.todos.filter(todos => todos.status === 'emproducao').length) ).slice(-2)}</p>
 								<p className= "perfil-dados-status">em produção</p>
 							</div> 
 
 							<div>
-								<p className= "perfil-dados-numero">{('0' +this.props.resolvido).slice(-2)}</p>
+								<p className= "perfil-dados-numero">{('0' + ( this.props.todoReducer.todos.filter(todos => todos.status === 'resolvido').length) ).slice(-2)}</p>
 								<p className= "perfil-dados-status">resolvidas</p>
 							</div> 
 
@@ -67,4 +62,5 @@ class Perfil extends Component {
 	}
 }
 
-export default Perfil;
+const mapStateToProps = state => ({ todoReducer: state.todoReducer });
+export default connect(mapStateToProps)(Perfil);

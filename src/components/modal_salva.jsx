@@ -8,12 +8,6 @@ import { salva, onChangeDescricao, onChangeStatus, onChangeResponsaveis  } from 
 
 class ModalSalva extends Component {
 
-	constructor(props) {
-
-		super(props);
-
-	}
-
 	render() {
 		return (
 			<div className="light-modal" id="open-modal-novo" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">

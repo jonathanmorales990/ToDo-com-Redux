@@ -5,7 +5,7 @@ import img04 from '../img/03.jpg';
 import img05 from '../img/04.jpg';
 import img06 from '../img/05.jpg';
 
-const INITIAL_STATE = { todos:[], descricao:'', status:'pendentes', responsaveisId:1, 
+const INITIAL_STATE = { todos:[], descricao:'', status:'pendentes', responsaveisId:1, editandoIndex:null, 
 	
 	responsaveis: [
 				{
@@ -52,6 +52,12 @@ const INITIAL_STATE = { todos:[], descricao:'', status:'pendentes', responsaveis
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
+    	case 'EDITAR_OPEN_MODAL':
+			return { ...state, descricao:action.payload.todos.descricao, status:action.payload.todos.status, responsaveisId:action.payload.todos.responsavel.id, editandoIndex:action.payload.index }		
+    	case 'EXCLUI_TODO':
+    		return { ...state, todos: state.todos.filter((_, i) => i !== action.payload) }
+    	case 'EDITAR_TODO':
+            return { ...state, todos: action.payload }
         case 'SALVA_TODO':
             return { ...state, todos: [...state.todos, action.payload] }
         case 'ON_CHANGE_DESCRICAO':
@@ -60,10 +66,6 @@ export default function(state = INITIAL_STATE, action) {
         	return { ...state, status: action.payload }
         case 'ON_CHANGE_RESPONSAVEIS':
         	return { ...state, responsaveisId: action.payload }
-      /*  case 'DISPLAY_ERROR':
-            return { ...state, erro: true, loading:false }
-        case 'LOADING':
-            return {...state, loading:true, erro:false, consulta:null }*/
         default:
             return state
     }

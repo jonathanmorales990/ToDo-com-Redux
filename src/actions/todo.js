@@ -13,12 +13,29 @@ export function salva() {
 
 }
 
+export function editarOpenModal(todos, index){
+	
+	return { type: 'EDITAR_OPEN_MODAL', payload: {todos, index } }
+
+}
+export function editar(){
+	
+	const state = store.getState().todoReducer;
+
+	let todo = {};
+	todo.descricao = state.descricao;
+	todo.status = state.status;
+	todo.responsavel = state.responsaveis.find(responsaveis => responsaveis.id === parseInt(state.responsaveisId, 10));
+
+	let newTodos = state.todos.slice();
+	newTodos[state.editandoIndex] = todo;
+
+	return { type: 'EDITAR_TODO', payload: newTodos };
+}
+
 export function excluir(index){
 
-	const state = store.getState().todoReducer;
-	let filtered = state.todos.filter((_, i) => i !== index);
-	console.log(filtered);
-	return { type: 'SALVA_TODO', payload: filtered }
+	return { type: 'EXCLUI_TODO', payload: index }
 
 } 
 
@@ -38,3 +55,4 @@ export function onChangeResponsaveis(e) {
 	return { type: 'ON_CHANGE_RESPONSAVEIS', payload:e.target.value }
 
 }
+

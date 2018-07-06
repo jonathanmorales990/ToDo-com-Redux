@@ -1,16 +1,13 @@
-
-
-
 import React, { Component } from 'react';
 
 
+import { connect } from 'react-redux';
+
+import { bindActionCreators } from 'redux';
+
+import { editar, onChangeDescricao, onChangeStatus, onChangeResponsaveis  } from '../actions/todo';
+
 class ModalSalva extends Component {
-
-	constructor(props) {
-
-		super(props);
-
-	}
 
 	render() {
 		return (
@@ -25,14 +22,14 @@ class ModalSalva extends Component {
 					<div className="light-modal-body">
 
 						<div className="form-container">		
-							<textarea value={this.props.descricao} onChange={this.props.onChangeDescricao} className="form-descricao" type="text" placeholder="Descrição"/>
+							<textarea value={this.props.todoReducer.descricao} onChange={this.props.onChangeDescricao} className="form-descricao" type="text" placeholder="Descrição"/>
 
-							<select className="form-select" onChange={this.props.onChangeStatus} value={this.props.status}>
+							<select className="form-select" onChange={this.props.onChangeStatus} value={this.props.todoReducer.status}>
 								<option value="pendentes">Pendente</option>
 								<option value="emproducao">Em produção</option>
 								<option value="resolvido">Resolvido</option>
 							</select>
-							<select className="form-select" onChange={this.props.onChangeResponsaveis} value={this.props.responsaveisId} >
+							<select className="form-select" onChange={this.props.onChangeResponsaveis} value={this.props.todoReducer.responsaveisId} >
 								<option value="1">Usuário 1</option>
 								<option value="2">Usuário 2</option>
 								<option value="3">Usuário 3</option>
@@ -52,5 +49,7 @@ class ModalSalva extends Component {
 		)
 	}
 }
+const mapStateToProps = state => ({ todoReducer: state.todoReducer });
+const mapDispatchToProps = dispatch => bindActionCreators({ editar, onChangeDescricao, onChangeStatus, onChangeResponsaveis  }, dispatch);
 
-export default ModalSalva;
+export default connect(mapStateToProps, mapDispatchToProps)(ModalSalva);

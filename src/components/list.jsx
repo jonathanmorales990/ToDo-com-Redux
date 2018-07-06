@@ -3,16 +3,9 @@ import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 
-import { excluir } from '../actions/todo';
+import { excluir, editarOpenModal } from '../actions/todo';
 
 class List extends Component {
-
-	constructor(props) {
-
-		super(props);
-		console.log(this.props);
-
-	}
 
 	render() {
 		return (
@@ -44,7 +37,7 @@ class List extends Component {
 						this.props.todoReducer.todos.length ? ( this.props.todoReducer.todos.map((todos, i) => { return  todos.status === 'pendentes' ? (  	
 						<ul className="todo-lists" key={i}>
 							<li className="todo-lists-icon"><i className="icon-drag"></i></li>
-								<a href="#open-modal-edit"  /*onClick={this.props.editarOpenModalClick.bind(this, todos, i)}*/><li className="todo-lists-descricao">{todos.descricao}</li></a>
+								<a href="#open-modal-edit"  onClick={this.props.editarOpenModal.bind(this, todos, i)}><li className="todo-lists-descricao">{todos.descricao}</li></a>
 							<li className="todo-lists-responsavel"> 
 								<img src={todos.responsavel.url} className="perfil-foto-mini"/> 
 								{todos.responsavel.nome === 'Lisa Helma Davoz' ? (<strong> {todos.responsavel.nome} </strong>) : (todos.responsavel.nome) }
@@ -87,7 +80,7 @@ class List extends Component {
 						return  todos.status === 'emproducao' ? (  		
 						<ul className="todo-lists" key={i}>
 							<li className="todo-lists-icon"><i className="icon-drag"></i></li>
-								<a href="#open-modal-edit"  /*onClick={this.props.editarOpenModalClick.bind(this,todos,i)}*/><li className="todo-lists-descricao">{todos.descricao}</li></a>
+								<a href="#open-modal-edit"  onClick={this.props.editarOpenModal.bind(this,todos,i)}><li className="todo-lists-descricao">{todos.descricao}</li></a>
 							<li className="todo-lists-responsavel"> 
 								<img src={todos.responsavel.url} className="perfil-foto-mini"/> 
 								{todos.responsavel.nome === 'Lisa Helma Davoz' ? (<strong> {todos.responsavel.nome} </strong>) : (todos.responsavel.nome) }
@@ -128,7 +121,7 @@ class List extends Component {
 						return  todos.status === 'resolvido' ? (  	
 						<ul className="todo-lists" key={i}>
 							<li className="todo-lists-icon"><i className="icon-drag"></i></li>
-								<a href="#open-modal-edit" /*onClick={this.props.editarOpenModalClick.bind(this,todos,i)}*/><li className="todo-lists-descricao">{todos.descricao}</li></a>
+								<a href="#open-modal-edit" onClick={this.props.editarOpenModal.bind(this,todos,i)}><li className="todo-lists-descricao">{todos.descricao}</li></a>
 							<li className="todo-lists-responsavel"> 
 								<img src={todos.responsavel.url} className="perfil-foto-mini"/>
 								{todos.responsavel.nome === 'Lisa Helma Davoz' ? (<strong> {todos.responsavel.nome} </strong>) : (todos.responsavel.nome) }
@@ -148,6 +141,6 @@ class List extends Component {
 	}
 }
 const mapStateToProps = state => ({ todoReducer: state.todoReducer });
-const mapDispatchToProps = dispatch => bindActionCreators({ excluir }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ excluir, editarOpenModal }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
