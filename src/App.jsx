@@ -19,20 +19,10 @@ class App extends Component {
 		return (
 			<Provider store={store}>
 				<div className="container-principal">
-
-					{/*MODAL Nova Task INICIO*/}
 					<ModalSalva/>
-					{/*MODAL FIM*/}
-
-					{/*MODAL edit Task INICIO*/}
 					<ModalEdit/>
-					{/*MODAL edit task FIM*/}
-
 					<Perfil/>
-
 					<List/>
-
-
 				</div>
 			</Provider>
 		);
