@@ -34,7 +34,7 @@ export function editarOpenModal(todos, index){
 }
 
 export function onChangeDescricao(e) {
-    return { type: 'ON_CHANGE_DESCRICAO', payload:e.target.value }
+	return { type: 'ON_CHANGE_DESCRICAO', payload:e.target.value }
 }
 
 export function onChangeStatus(e) {
