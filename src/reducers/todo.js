@@ -53,13 +53,13 @@ const INITIAL_STATE = { todos:[], descricao:'', status:'pendentes', responsaveis
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
     	case 'EDITAR_OPEN_MODAL':
-			return { ...state, descricao:action.payload.todos.descricao, status:action.payload.todos.status, responsaveisId:action.payload.todos.responsavel.id, editandoIndex:action.payload.index }		
+		return { ...state, descricao:action.payload.todos.descricao, status:action.payload.todos.status, responsaveisId:action.payload.todos.responsavel.id, editandoIndex:action.payload.index }		
     	case 'EXCLUI_TODO':
     		return { ...state, todos: state.todos.filter((_, i) => i !== action.payload) }
     	case 'EDITAR_TODO':
-            return { ...state, todos: action.payload }
+            	return { ...state, todos: action.payload }
         case 'SALVA_TODO':
-            return { ...state, todos: [...state.todos, action.payload] }
+            	return { ...state, todos: [...state.todos, action.payload] }
         case 'ON_CHANGE_DESCRICAO':
         	return { ...state, descricao: action.payload }
         case 'ON_CHANGE_STATUS':
@@ -67,6 +67,6 @@ export default function(state = INITIAL_STATE, action) {
         case 'ON_CHANGE_RESPONSAVEIS':
         	return { ...state, responsaveisId: action.payload }
         default:
-            return state
+           	return state
     }
 }
