@@ -5,47 +5,49 @@ import img04 from '../img/03.jpg';
 import img05 from '../img/04.jpg';
 import img06 from '../img/05.jpg';
 
-const INITIAL_STATE = { todos:[], descricao:'', status:'pendentes', responsaveisId:1, editandoIndex:null, 
-	
-	responsaveis: [
-				{
+const INITIAL_STATE = { 
+	todos: [], 
+	descricao: '', 
+	status: 'pendentes', 
+	responsaveisId:1, 
+	editandoIndex:null, 
+	responsaveis: [{
 
 				id:1,
 				nome:'Usuário 1',
 				url:img02
 
-				},
-				{
+			},
+			{
 
 				id:2,
 				nome:'Usuário 2',
 				url:img03
 
-				},{
+			},{
 
 				id:3,
 				nome:'Usuário 3',
 				url:img04
 
-				},{
+			},{
 
 				id:4,
 				nome:'Usuário 4',
 				url:img05
 
-				},{
+			},{
 
 				id:5,
 				nome:'Usuário 5',	
 				url:img06
 
-				},{
+			},{
 				id:6,
 				nome:'Lisa Helma Davoz', 
 				url:img01
 
-				}
-	] 
+			}] 
 
 }
 
