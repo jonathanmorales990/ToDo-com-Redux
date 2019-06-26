@@ -33,7 +33,7 @@ $fonte:'Source Sans Pro', sans-serif;
 }
 
 textarea:focus, input:focus, select:focus{
-    outline: none;
+  outline: none;
 }
 
 .cria-taks-button-form{
@@ -58,9 +58,9 @@ textarea:focus, input:focus, select:focus{
   transform: translateX(-50%);
 }
 .cria-taks-button-form:hover{
- transition-timing-function: ease-int;
- transition: background-color 1.1s;
- background-color:#9467fb;
+  transition-timing-function: ease-int;
+  transition: background-color 1.1s;
+  background-color:#9467fb;
 }
 
 
